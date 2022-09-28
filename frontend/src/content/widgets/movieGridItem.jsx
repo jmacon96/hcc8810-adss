@@ -37,8 +37,8 @@ class MovieGridItem extends Component {
 					</div> */}
 
 					<div className='voteButtons'>
-						<button type="button" class="btn btn-success" onClick={() => changeRating(5, currentMovie.movie_id)}>💯</button>
-						<button type="button" class="btn btn-primary" onClick={() => changeRating(1, currentMovie.movie_id)}>💩</button>
+						<button type="button" class="btn btn-success" onClick={() => changeRating(5, currentMovie.movie_id)}>👍</button>
+						<button type="button" class="btn btn-primary" onClick={() => changeRating(1, currentMovie.movie_id)}>👎</button>
 					</div>
 					
 					{/* <button onClick={() => changeRating(5, currentMovie.movie_id)}>Yay</button>; */}
