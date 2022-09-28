@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import StarRatings from 'react-star-ratings';
 
 const defaultMovieIco = require("../res/default_movie_icon.svg");
-
+function sayHello() {
+	alert('You clicked me!');
+  }
 class MovieGridItem extends Component {
 
 	render() {
@@ -21,7 +23,7 @@ class MovieGridItem extends Component {
 					backgroundImage: "url(" + currentMovie.poster + "), url('" + defaultMovieIco + "')",
 				}}>
 				<div className="overlay">
-					<div className={starDivClass}>
+					{/* <div className={starDivClass}>
 						<StarRatings
 							rating={currentMovie.rating}
 							starRatedColor="rgb(252,229,65)"
@@ -31,7 +33,17 @@ class MovieGridItem extends Component {
 							changeRating={changeRating}
 							numberOfStars={5}
 							name={currentMovie.movie_id} />
+
+					</div> */}
+
+					<div className='voteButtons'>
+						<button type="button" class="btn btn-success" onClick={() => changeRating(5, currentMovie.movie_id)}>💯</button>
+						<button type="button" class="btn btn-primary" onClick={() => changeRating(1, currentMovie.movie_id)}>💩</button>
 					</div>
+					
+					{/* <button onClick={() => changeRating(5, currentMovie.movie_id)}>Yay</button>; */}
+
+					{/* <button onClick={() => changeRating(1, currentMovie.movie_id)}>Nay</button>; */}
 					{/* <p style={{color: "white"}}>Yes | No</p> */}
 				</div>
 				<div className="grid-item-label" style={{ position: "absolute" }}>

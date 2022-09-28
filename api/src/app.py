@@ -154,7 +154,7 @@ def predict_preferences():
             # Condition specific messaging
             'right': {
                 'tag': condition.cond_tag,
-                'label': condition.cond_act,
+                'label': 'Movies You May Like',
                 'byline': condition.cond_exp,
                 'items': rightitems
             }

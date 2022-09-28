@@ -358,3 +358,20 @@ div .card {
 	z-index: 2080;
 	margin: 0 0 0 9px;
 }
+
+button {
+	margin-top: 5em;
+}
+
+.voteButtons {
+	display: none;
+}
+
+.grid-item:hover .voteButtons {
+	display: contents;
+}
+
+.container-visited .voteButtons {
+	display: contents;
+	opacity: 0.8;
+}

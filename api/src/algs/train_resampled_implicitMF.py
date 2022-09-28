@@ -16,7 +16,7 @@ import os
 from lenskit.datasets import MovieLens
 
 # You can import different algorithms here from Lenskit
-from lenskit.algorithms import als
+from lenskit.algorithms import als, item_knn, funksvd
 
 data_path = setpath.set_data_path()
 fullpath_trian = data_path + 'train.npz'
@@ -54,7 +54,9 @@ alpha = 0.5
 start = time.time()
 
 # This is where you train your model using your algorithm of choice
-resampled_algo = als.BiasedMF(20, iterations=10, method="lu")
+#resampled_algo = als.BiasedMF(20, iterations=10, method="lu")
+resampled_algo = funksvd.FunkSVD(20, iterations=10)
+#resampled_algo = item_knn.ItemItem(20, min_nbrs = 10)
 
 model_path = os.path.join(os.path.dirname(__file__), './model/')
 for i in range(numRepetition):
